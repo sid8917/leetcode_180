@@ -5,7 +5,7 @@ public:
        /* if(m==1||n==1){
             return 1; }
             return uniquePaths(m-1,n)+uniquePaths(m,n-1);*/
-        //This solution has exponential time complexity (n+m) ^2
+        //This solution has exponential time complexity 2^n
         
        
         /*We will use a dynamic programming hash table
