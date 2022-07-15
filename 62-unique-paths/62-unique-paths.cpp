@@ -1,5 +1,7 @@
 class Solution {
 public:
+    /*
+    Solution-3 same complexitites as Sol2
     int countPaths(int m,int n,vector<vector<int>> &dp){
          if(m==1||n==1){
             return 1;
@@ -10,7 +12,8 @@ public:
         else{
             return dp[m][n]=countPaths(m-1,n,dp)+countPaths(m,n-1,dp);
         }
-    }
+    }*/
+    
     int uniquePaths(int m, int n) {
         //Solution 1 Brute Force
        /* if(m==1||n==1){
@@ -41,10 +44,18 @@ public:
         return answer[m-1][n-1];*/
         
         
-        vector<vector<int>> dp(m+1,(vector<int>(n+1,-1)));
-        return countPaths(m,n,dp);
+      //sol3  vector<vector<int>> dp(m+1,(vector<int>(n+1,-1)));
+      //sol3  return countPaths(m,n,dp);
         
-       
+       double answer=1;
+        int N=m+n-2;
+        int r=m-1;
+        for(int i=1;i<=r;i++){
+            answer=answer*(N-r+i)/i;
+            
+            
+        }
+        return (int)answer;
         
     }
 };
