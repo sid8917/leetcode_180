@@ -9,11 +9,11 @@ public:
         int n = num.size(); 
         sort(num.begin(),num.end());
     
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n-3; i++) {
         
             
         
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i + 1; j < n-2; j++) {
             
                 long target_2 = (long)target - (long)num[j] - (long)num[i];
             
@@ -30,11 +30,7 @@ public:
                 
                     else {
                     
-                        vector<int> quadruplet(4, 0);
-                        quadruplet[0] = num[i];
-                        quadruplet[1] = num[j];
-                        quadruplet[2] = num[front];
-                        quadruplet[3] = num[back];
+                        vector<int> quadruplet{num[i],num[j],num[front],num[back]};
                         res.push_back(quadruplet);
                     
                         // Processing the duplicates of number 3
