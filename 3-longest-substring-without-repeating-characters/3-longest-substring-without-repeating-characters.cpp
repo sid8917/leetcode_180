@@ -9,14 +9,12 @@ public:
             if(umap.find(ch)==umap.end()){
                 count++;
                 umap[ch]=i;
-                cout<<1<<endl;
             }
             else{
                 gcount=max(count,gcount);
                 count=min(i-umap[ch],count+1);
-                cout<<count;
                 umap[ch]=i;
-                cout<<2<<endl;
+                
             }
         }
         return max(count,gcount);
