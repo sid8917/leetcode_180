@@ -11,14 +11,12 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
+       /*  O(2n) solution using length
+        
         int length=0;
-        
-        if(head==NULL) return NULL;
-        
-        length++;
-        
         ListNode* temp=head;
-        while(temp->next!=NULL){
+       
+        while(temp!=NULL){
             length++;
             temp=temp->next;
         }
@@ -29,6 +27,18 @@ public:
         while(it--){
          temp=temp->next;   
         }
-        return temp;
+        return temp;*/
+        
+        // O(n) using fast and slow pointer
+        
+        ListNode *fast=head,*slow=head;
+        
+        
+        while(fast!=NULL&&fast->next!=NULL){
+            fast=fast->next->next;
+            slow=slow->next;
+        }
+        
+        return slow;
     }
 };
