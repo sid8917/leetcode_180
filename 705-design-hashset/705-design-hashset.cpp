@@ -3,7 +3,7 @@ public:
     vector<list<int>>vec;
     int siz;
     MyHashSet() {
-        siz=10;
+        siz=100;
         vec.resize(siz);
     }
     
