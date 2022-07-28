@@ -20,7 +20,9 @@ public:
         ListNode *temp=dummy;
         while(temp->next!=NULL){
             if(temp->next->val==val){
+                ListNode *del=temp->next;
                 temp->next=temp->next->next;
+                delete(del);
             }
             else temp=temp->next;
         }
