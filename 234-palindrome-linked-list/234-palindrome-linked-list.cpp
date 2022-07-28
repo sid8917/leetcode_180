@@ -35,16 +35,40 @@ public:
         
     ListNode *newHead=reverseList(slow->next);
     slow->next=newHead;
-        
+        int flag=0;
+        ListNode *start=head;
         while(newHead!=NULL){
-            if(head->val!=newHead->val) return false;
-            head=head->next;
+            if(start->val!=newHead->val){
+                flag=1;
+                break;
+            }  
+            start=start->next;
             newHead=newHead->next;
         }
         
-        return true;
+        ListNode *temp=head;
         
+/*      while(temp!=NULL){
+            cout<<temp->val<<" ";
+            temp=temp->next;
+        }
+        cout<<endl;*/
         
+        //fixing back the linked list 
+        newHead=reverseList(slow->next);
+        slow->next=newHead;
+        
+ /*     temp=head;
+        while(temp!=NULL){
+            cout<<temp->val<<" ";
+            temp=temp->next;
+        }
+        cout<<endl;*/
+        
+       if(flag==0){
+           return true;
+       }
+       else return false;
         
         
     }
