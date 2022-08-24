@@ -1,18 +1,12 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_map<int,int> umap;
-        
+       
+        int answer=0;
         for(auto i:nums){
-            umap[i]++;
+           answer^=i;
         }
         
-        for(auto i:umap){
-            if(i.second==1){
-                return i.first;
-            }
-        }
-        
-        return 0;
+        return answer;
     }
 };
