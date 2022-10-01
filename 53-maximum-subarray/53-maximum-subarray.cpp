@@ -1,13 +1,13 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-         int overallmax=nums[0];
-        int currentmax=nums[0];
+        int maxSum=nums[0];
+        int currSum=nums[0];
         for(int i=1;i<nums.size();i++){
-           currentmax=std::max(currentmax+nums[i],nums[i]); 
-           overallmax=std::max(currentmax,overallmax);
+            currSum=max(nums[i],currSum+nums[i]);
+            maxSum=max(currSum,maxSum);
         }
-        return overallmax;
+        
+        return maxSum;
     }
-    
 };
