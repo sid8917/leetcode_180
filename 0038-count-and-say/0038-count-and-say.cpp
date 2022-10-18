@@ -14,15 +14,15 @@ public:
         }
         
         if(str.length()>1){
-        for(int i=1;i<=str.length();i++){
+        for(int i=0;i<str.length();i++){
             int count=1;
-            while(i<str.length()&&str[i]==str[i-1]){
+            while(i<str.length()-1&&str[i]==str[i+1]){
                 count++;
                 i++;
             }
             
             ans+=(char)('0'+count);
-            ans+=str[i-1];
+            ans+=str[i];
             
                
         }}
