@@ -26,12 +26,9 @@ public:
        
        
        if(t==1000){
-       string temp="";
-       while(rem){
-       temp+="M";
-       rem--;
-       }
-       result=temp+result;
+       if(rem==1) result='M'+result;
+       if(rem==2) result="MM"+result;
+       if(rem==3) result="MMM"+result;
        return result;
        }
        
