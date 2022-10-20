@@ -23,6 +23,8 @@ public:
        ch2='D';
        ch3='M';
        }
+       
+       
        if(t==1000){
        string temp="";
        while(rem){
@@ -34,22 +36,12 @@ public:
        }
        
        
-       if(rem==4){
-       result=ch1+ch2+result;
-       }
        
-       if(rem==9){
-       result=ch1+ch3+result;
-       }
-       
-       if(rem>=1&&rem<=3){
-       string temp="";
-       while(rem){
-       temp+=ch1;
-       rem--;
-       }
-       result=temp+result;
-       }
+       if(rem==4) result=ch1+ch2+result;
+       if(rem==9) result=ch1+ch3+result;
+       if(rem==1) result=ch1+result;
+       if(rem==2) result=ch1+ch1+result;
+       if(rem==3) result=ch1+ch1+ch1+result;
        if(rem==5) result=ch2+result;
        if(rem==6) result=ch2+ch1+result;
        if(rem==7) result=ch2+ch1+ch1+result;
